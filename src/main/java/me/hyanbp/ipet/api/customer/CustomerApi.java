@@ -21,9 +21,9 @@ public class CustomerApi {
     }
 
     @PostMapping
-    public ResponseEntity<String> createCustomer(@RequestBody CustomerRequest request) {
-        String email = customerService.create(request);
-        return ResponseEntity.ok(email);
+    public ResponseEntity<Customer> createCustomer(@RequestBody CustomerRequest request) {
+        Customer customer = customerService.create(request);
+        return ResponseEntity.ok(customer);
     }
 
 

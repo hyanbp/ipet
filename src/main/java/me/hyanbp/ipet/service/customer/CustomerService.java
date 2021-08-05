@@ -18,10 +18,10 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public String create(CustomerRequest request){
+    public Customer create(CustomerRequest request){
         Optional<Customer> customer = customerRepository.findCustomerByEmail(request.getEmail());
         if (customer.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email de cliente ja cadastrado.");
-         return customerRepository.save(new Customer(request.getName(), request.getEmail(), request.getAge())).getEmail();
+         return customerRepository.save(new Customer(request.getName(), request.getEmail(), request.getAge()));
     }
 
 
