@@ -1,1 +1,1 @@
-web: java -jar -Dserver.port=$PORT target/ipet.war
+web: java -jar -Dserver.port=$PORT build/libs/ipet-service-0.0.1-SNAPSHOT.jar
