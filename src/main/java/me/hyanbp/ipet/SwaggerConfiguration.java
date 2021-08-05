@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
     public Docket productApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("me.hyanbp"))
+                .apis(RequestHandlerSelectors.basePackage("me.hyanbp.ipet"))
                 .paths(regex("/.*"))
                 .build();
     }
